@@ -134,7 +134,7 @@ class ImportService < BaseService
   end
 
   def follow_limit
-    FollowLimitValidator.limit_for_account(@account)
+    FollowLimitValidator.limit_for_account(@account) - @account.following_count
   end
 
   def relations_map_for_account(account, account_ids)
